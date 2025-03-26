@@ -15,7 +15,7 @@
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <!-- Logo -->
             <div class="text-xl font-bold text-gray-800">
-                <a href="#">Fleekwrites</a>
+                <img src="./images/download (1).png" alt="" style="width: 60px;">
             </div>
 
             <!-- Mobile Menu Button -->
@@ -31,7 +31,7 @@
             <!-- Navigation Links for Desktop -->
             <div class="hidden md:!flex space-x-6">
                 <a href="#" class="text-gray-600 hover:text-gray-800 transition">Home</a>
-                <a href="#articles" class="text-gray-600 hover:text-gray-800 transition">Articles</a>
+                <a href="#main" class="text-gray-600 hover:text-gray-800 transition">Articles</a>
                 <a href="#author" class="text-gray-600 hover:text-gray-800 transition">Author</a>
                 <a href="#newsletter" class="text-gray-600 hover:text-gray-800 transition">Newsletter</a>
             </div>
@@ -80,7 +80,7 @@
             <!-- Mobile Navigation Links -->
             <div class="flex flex-col items-center space-y-4">
                 <a href="#" class="text-gray-600 hover:text-gray-800 transition">Home</a>
-                <a href="#articles" class="text-gray-600 hover:text-gray-800 transition">Articles</a>
+                <a href="#main" class="text-gray-600 hover:text-gray-800 transition">Articles</a>
                 <a href="#author" class="text-gray-600 hover:text-gray-800 transition">Author</a>
                 <a href="#newsletter" class="text-gray-600 hover:text-gray-800 transition">Newsletter</a>
             </div>
@@ -94,29 +94,44 @@
         </div>
 
         <!-- Main Content -->
-        <div class="relative z-10 flex flex-col items-center justify-center h-full">
-            <h1 class="text-5xl font-extrabold mb-4">Fleekwrites</h1>
-            <p class="mt-4 text-lg max-w-2xl">Discover amazing articles and insights</p>
-
-            <!-- Subscribe Form -->
-            <form class="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
-                <input type="email" placeholder="Enter your email"
-                    class="px-4 py-2 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                <button type="submit"
-                    class="bg-black text-white px-6 py-2 rounded-lg text-lg font-semibold hover:bg-primary-dark transition duration-300 w-full">Subscribe</button>
-            </form>
-
+        <div class="p-6 md:p-0 relative z-10 flex flex-col items-center justify-center h-full text-center">
+            <!-- Fleekwrites with Artistic Styling -->
+            <h1 class="text-6xl md:text-7xl font-extrabold tracking-wide text-white 
+                bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 
+                bg-clip-text text-transparent drop-shadow-lg">
+                Fleekwrites
+            </h1>
+        
+            <p class="mt-6 text-xl md:text-2xl max-w-3xl text-gray-200 leading-relaxed">
+                A hub of captivating stories, deep insights, and ideas worth sharing.
+            </p>
+        
+            <!-- Call to Action Buttons -->
+            <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 w-full px-6">
+                <a href="#main" class="bg-black text-white text-xl font-semibold px-8 py-4 
+                    rounded-2xl w-full sm:w-auto text-center shadow-lg hover:bg-gray-900 
+                    transition duration-300">
+                    Explore Articles
+                </a>
+                <a href="#newsletter" class="border border-white text-white text-xl font-semibold px-8 py-4 
+                    rounded-2xl w-full sm:w-auto text-center shadow-lg hover:bg-white hover:text-black 
+                    transition duration-300">
+                    Join the Club
+                </a>
+            </div>
+        
             <!-- Scroll Down Arrow -->
-            <a href="#main" class="mt-8 text-white text-3xl animate-bounce">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" stroke="currentColor"
+            <a href="#main" class="mt-10 text-white text-4xl animate-bounce">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" stroke="currentColor"
                     viewBox="0 0 24 24" stroke-width="2">
                     <path d="M12 5v14M5 12l7 7 7-7" />
                 </svg>
             </a>
-        </div>
+        </div>        
     </header>
 
     <!-- Articles Section -->
+     <div id="main"></div>
     <main id="main articles">
         <div class="container mx-auto px-4 py-8 min-h-screen">
             <div class="grid grid-cols-1 lg:grid-cols-5 gap-4">
@@ -212,7 +227,7 @@
                         </div> -->
                     </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="articles-container">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 cursor-pointer" id="articles-container">
 
                     </div>
 
@@ -245,15 +260,16 @@
                     Enter your email below to receive our newsletter straight to your inbox!</p>
 
                 <!-- Subscription Form -->
-                <form action="#" method="POST"
-                    class="flex flex-col md:flex-row max-w-md w-full items-center justify-center md:space-x-4 gap-4">
-                    <input type="email" name="email" placeholder="Enter your email" required
+                <form id="newsletter-form" class="flex flex-col md:flex-row max-w-md w-full items-center justify-center md:space-x-4 gap-4">
+                    <input type="email" name="email" id="email" placeholder="Enter your email" required
                         class="px-6 py-3 rounded-lg text-black w-full focus:outline-none focus:ring-2 focus:ring-blue-500">
                     <button type="submit"
                         class="bg-black text-white px-8 py-3 rounded-lg text-lg hover:bg-blue-700 transition duration-300 w-full">
                         Subscribe
                     </button>
                 </form>
+
+                <p id="message" class="text-center text-sm mt-2"></p>
             </div>
         </div>
     </section>
@@ -373,121 +389,7 @@
         </div>
     </footer>
 
-
-    <script>
-        const url = 'http://127.0.0.1:8000/blog/';
-        const articlesContainer = document.getElementById('articles-container');
-        const loadMoreButton = document.getElementById('load-more');
-
-        let nextPage = 1;
-        let currentPage = 1; // Track the current page
-        let allArticles = []; // Store all loaded articles
-
-        async function fetchArticles() {
-            try {
-                const response = await fetch(`${url}?page=${currentPage}`);
-                if (!response.ok) {
-                    console.error(`HTTP Error: ${response.status} - ${response.statusText}`);
-                    throw new Error('Failed to fetch articles');
-                }
-                const data = await response.json();
-                console.log('Fetched articles:', data);
-
-                // Avoid duplicates by filtering already loaded articles
-                const newArticles = data.filter(article =>
-                    !allArticles.some(existing => existing.id === article.id)
-                );
-
-                allArticles = [...allArticles, ...newArticles]; // Update the loaded articles
-                renderArticles(newArticles);
-
-                if (newArticles.length === 0) {
-                    console.log('No more articles to load');
-                    document.querySelector('#load-more-btn').disabled = true; // Disable Load More
-                } else {
-                    currentPage += 1; // Increment page for next request
-                }
-            } catch (error) {
-                console.error('Error fetching articles:', error);
-            }
-        }
-
-        function renderArticles(articles) {
-            if (!articles || articles.length === 0) {
-                console.log('No new articles to display');
-                return;
-            }
-
-            const articlesContainer = document.querySelector('#articles-container');
-
-            articles.forEach(article => {
-                const articleElement = document.createElement('div');
-                articleElement.classList.add('article', 'border', 'rounded', 'mb-4', 'hover:shadow-lg', 'transition', 'flex', 'flex-col', 'h-full');
-
-                // Construct the article element
-                articleElement.innerHTML = `
-            <a href="./article.html?id=${article.id}" class="block bg-white rounded-lg overflow-hidden">
-                <!-- Static Image on Top -->
-                <div class="flex-shrink-0">
-                    <img src="./images/blog.jpg" alt="${article.title}" class="w-full h-48 object-cover rounded-t-lg" />
-                </div>
-
-                <!-- Article Content -->
-                <div class="p-4 flex-1 flex flex-col justify-between">
-                    <!-- Article Title -->
-                    <h5 class="font-bold text-xl text-gray-800 mb-2 hover:text-blue-600 transition duration-300 line-clamp-2">${article.title}</h5>
-
-                    <!-- Author and Date -->
-                    <div class="flex items-center justify-between text-sm text-gray-600">
-                        <span class="font-medium text-blue-500">
-                            <a href="" class="inline-flex items-start">By ${article.author}</a>
-                        </span>
-                        <span class="text-gray-500">Posted ${formatTimeAgo(article.created_at)}</span>
-                    </div>
-
-                </div>
-            </a>
-        `;
-
-                articlesContainer.appendChild(articleElement);
-            });
-        }
-
-
-        // Helper function to format the time ago text (human-readable format)
-        function formatTimeAgo(dateString) {
-            const now = new Date();
-            const articleDate = new Date(dateString);
-            const diffInSeconds = Math.floor((now - articleDate) / 1000);
-
-            if (diffInSeconds < 60) return `${diffInSeconds} second${diffInSeconds !== 1 ? 's' : ''} ago`;
-            const diffInMinutes = Math.floor(diffInSeconds / 60);
-            if (diffInMinutes < 60) return `${diffInMinutes} minute${diffInMinutes !== 1 ? 's' : ''} ago`;
-            const diffInHours = Math.floor(diffInMinutes / 60);
-            if (diffInHours < 24) return `${diffInHours} hour${diffInHours !== 1 ? 's' : ''} ago`;
-            const diffInDays = Math.floor(diffInHours / 24);
-            return `${diffInDays} day${diffInDays !== 1 ? 's' : ''} ago`;
-        }
-
-
-
-        // Load initial items and setup Load More button
-        fetchArticles();
-
-        const menuToggle = document.getElementById('menu-toggle');
-        const closeMenu = document.getElementById('close-menu');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        // Toggle mobile menu on and off
-        menuToggle.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Close the mobile menu when close button is clicked
-        closeMenu.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
-        });
-    </script>
+    <script src="./js/index.js"></script>
 </body>
 
 </html>
