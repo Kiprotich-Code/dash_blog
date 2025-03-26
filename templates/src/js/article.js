@@ -24,7 +24,7 @@ async function fetchArticle() {
         // Display article details
         document.getElementById('article-title').textContent = article.title;
         document.getElementById('article-author').textContent = `By ${article.author}`;
-        document.getElementById('article-date').textContent = new Date(article.created_at).toLocaleDateString();
+        document.getElementById('article-date').textContent = timeAgo(article.created_at);
         document.getElementById('article-body').textContent = article.body;
     } catch (error) {
         console.error('Error fetching article:', error);
@@ -34,3 +34,24 @@ async function fetchArticle() {
 
 // Load the article when the page loads
 window.onload = fetchArticle;
+
+
+function timeAgo(date) {
+    const seconds = Math.floor((new Date() - new Date(date)) / 1000);
+    const intervals = [
+        { label: 'year', seconds: 31536000 },
+        { label: 'month', seconds: 2592000 },
+        { label: 'week', seconds: 604800 },
+        { label: 'day', seconds: 86400 },
+        { label: 'hour', seconds: 3600 },
+        { label: 'minute', seconds: 60 },
+    ];
+
+    for (const interval of intervals) {
+        const count = Math.floor(seconds / interval.seconds);
+        if (count > 0) {
+            return `Posted ${count} ${interval.label}${count !== 1 ? 's' : ''} ago`;
+        }
+    }
+    return 'Just now';
+}

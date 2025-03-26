@@ -9,13 +9,12 @@
 </head>
 
 <body class="bg-gray-50 text-gray-800 min-h-screen">
-
     <!-- Navigation -->
-    <nav class="hidden bg-white shadow-md p-12 fixed w-full top-0 left-0 z-30">
+    <nav class="bg-white shadow-md p-4 fixed w-full top-0 left-0 z-30">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <!-- Logo -->
             <div class="text-xl font-bold text-gray-800">
-                <a href="#">Fleekwrites</a>
+                <img src="./images/download (1).png" alt="" style="width: 60px;">
             </div>
 
             <!-- Mobile Menu Button -->
@@ -29,11 +28,11 @@
             </div>
 
             <!-- Navigation Links for Desktop -->
-            <div class="hidden md:flex space-x-6">
-                <a href="./index.html" class="text-gray-600 hover:text-gray-800 transition">Home</a>
-                <a href="#" class="text-gray-600 hover:text-gray-800 transition">Store</a>
-                <a href="#" class="text-gray-600 hover:text-gray-800 transition">Articles</a>
-                <a href="#" class="text-gray-600 hover:text-gray-800 transition">Contact</a>
+            <div class="hidden md:!flex space-x-6">
+                <a href="#" class="text-gray-600 hover:text-gray-800 transition">Home</a>
+                <a href="#main" class="text-gray-600 hover:text-gray-800 transition">Articles</a>
+                <a href="#author" class="text-gray-600 hover:text-gray-800 transition">Author</a>
+                <a href="#newsletter" class="text-gray-600 hover:text-gray-800 transition">Newsletter</a>
             </div>
 
             <!-- Social Media Links for Desktop -->
@@ -80,14 +79,14 @@
             <!-- Mobile Navigation Links -->
             <div class="flex flex-col items-center space-y-4">
                 <a href="#" class="text-gray-600 hover:text-gray-800 transition">Home</a>
-                <a href="#" class="text-gray-600 hover:text-gray-800 transition">Store</a>
-                <a href="#" class="text-gray-600 hover:text-gray-800 transition">Articles</a>
-                <a href="#" class="text-gray-600 hover:text-gray-800 transition">Contact</a>
+                <a href="https://fleekwrites.blog/#main" class="text-gray-600 hover:text-gray-800 transition">Articles</a>
+                <a href="#author" class="text-gray-600 hover:text-gray-800 transition">Author</a>
+                <a href="#newsletter" class="text-gray-600 hover:text-gray-800 transition">Newsletter</a>
             </div>
         </div>
     </nav>
 
-    <header class="relative bg-gradient-to-r from-blue-500 to-purple-600 text-white text-center p-16 z-40 min-h-[50vh]">
+    <!-- <header class="absolute bg-gradient-to-r from-blue-500 to-purple-600 text-white text-center p-16 z-40 min-h-[50vh]">
         <div class="absolute inset-0 opacity-30">
             <img src="./images/blog2.jpg" alt="Background" class="w-full h-full object-cover">
         </div>
@@ -96,7 +95,7 @@
             <h1 class="text-5xl font-extrabold mb-4">Fleekwrites</h1>
             <p class="mt-4 text-lg max-w-2xl">Discover amazing articles and insights</p>
         </div>
-    </header>
+    </header> -->
 
     <!-- Article Detail Section -->
     <!-- Articles Section -->
@@ -121,15 +120,27 @@
                         <h1 id="article-title" class="text-6xl font-bold text-gray-900 mb-6"></h1>
                         <p id="article-author" class="hidden mr-2 font-medium">Lawi Kiprotich</p>
                     
-                        <!-- Author and Date Information -->
                         <div class="flex items-center ps-3 text-sm text-gray-600 mb-4">
-                            <p id="article-authors" class="mr-1 font-medium">By Lawi Kiprotich</p>
-                            <span class="mx-1">•</span>
-                            <p id="article-date" class="mr-1 italic"></p>
-                            <span class="mx-1">•</span>
+                            <!-- Author Icon + Name -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-gray-500 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 12c2.761 0 5-2.239 5-5s-2.239-5-5-5-5 2.239-5 5 2.239 5 5 5zm0 2c-3.866 0-7 3.134-7 7v1h14v-1c0-3.866-3.134-7-7-7z"/>
+                            </svg>
+                            <p id="article-authors" class="mr-3 font-medium">By Lawi</p>
+                        
+                            <!-- Calendar Icon + Date -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-gray-500 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm0 16H5V10h14v10z"/>
+                            </svg>
+                            <p id="article-date" class="mr-3 italic">March 26, 2025</p>
+                        
+                            <!-- Clock Icon + Read Time -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-gray-500 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 6v6h4v-2h-2V6zM12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"/>
+                            </svg>
                             <p id="article-read-time" class="mr-2">9 Minutes</p>
                         </div>
-                    
+                        
+                        
                         <!-- Article Body -->
                         <div id="article-body" class="text-lg text-gray-700 leading-relaxed p-5">
                             <!-- Content will be injected here dynamically -->
@@ -138,7 +149,7 @@
                 </div>
 
                 <!-- Left Sidebar -->
-                <div class="lg:col-span-2">
+                <div class="lg:col-span-2 mt-32">
                     <div class="bg-gray-100 p-6 rounded-lg shadow-md">
                         <div class="mt-4">
                             <h5 class="font-bold py-3">Social Media</h5>

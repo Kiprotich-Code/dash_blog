@@ -27,7 +27,7 @@ function renderArticles(articles) {
 
         // Construct the article element
         articleElement.innerHTML = `
-            <a href="/article/${article.id}" class="block text-xl font-semibold text-gray-900 hover:text-blue-500 p-4">
+            <a href="article.html?id=${article.id}" class="block text-xl font-semibold text-gray-900 hover:text-blue-500 p-4">
                 ${article.title}
                 <p class="text-gray-600 mt-2">${article.excerpt || "Explore more about this topic."}</p>
             </a>
