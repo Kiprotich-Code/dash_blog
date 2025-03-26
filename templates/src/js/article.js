@@ -55,3 +55,18 @@ function timeAgo(date) {
     }
     return 'Just now';
 }
+
+
+const menuToggle = document.getElementById('menu-toggle');
+const closeMenu = document.getElementById('close-menu');
+const mobileMenu = document.getElementById('mobile-menu');
+
+// Toggle mobile menu on and off
+menuToggle.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+});
+
+// Close the mobile menu when close button is clicked
+closeMenu.addEventListener('click', () => {
+    mobileMenu.classList.add('hidden');
+});
